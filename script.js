@@ -30,10 +30,23 @@ function length() {
    alert("to short")
    length();
  }
- else if (passwordLength >  999999 999999999999999999999999999999999999999999999999 999999999999999999999999999999999999999999999999999999999 99999999999999999) {
+ else if (passwordLength >  9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999) {
    alert("to long");
+   length();
+ }
+ else if (isNaN(passwordLength)){
+   alert("not a number");
+   length();
  }
 
+ //NaN code found on https://stackoverflow.com/questions/15096951/using-an-if-statement-to-check-if-nan
+ else if ( passwordLength == NaN  || " ") {
+ length();
+  }
+
+
+
+return passwordLength;
 
 
 
