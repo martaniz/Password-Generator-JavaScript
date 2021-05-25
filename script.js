@@ -23,37 +23,160 @@ var generateBtn = document.querySelector("#generate");
 //my first function lets write a function to determin the length of the password
 //call function length
 function length() {
- 
  passwordLength = prompt("chose the length");
 
  if (passwordLength < 00000008){
-   alert("to short")
+   alert("to short");
    length();
- }
- else if (passwordLength >  9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999) {
+ } else if (passwordLength >  9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999) {
    alert("to long");
    length();
+ } else if (isNaN(passwordLength)){
+  alert("PNANgths");
+  length();
+}    
+return passwordLength;
  }
- else if (isNaN(passwordLength)){
-   alert("not a number");
-   length();
- }
+//execute function length
+length();
+//i think that is good for the first function 
 
- //NaN code found on https://stackoverflow.com/questions/15096951/using-an-if-statement-to-check-if-nan
- else if ( passwordLength == NaN  || " ") {
- length();
+//lets duplicate the above function and make it work for uppercase etc.
+
+
+function funUpperCase() {
+  useUpperCase = prompt("use upper");
+
+  if (useUpperCase === null || useUpperCase === ""){
+    alert("please chose y n");
+    funUpperCase();
+  }
+
+  else if (useUpperCase === "yes" || useUpperCase === "y") {
+    useUppeCase = true;
+    return useUpperCase;
   }
 
 
-
-return passwordLength;
-
-
-
- 
+  else if (useUpperCase === "no" || useUpperCase === "n" || useUpperCase === "N") {
+    useUpperCase = false;
+    return useUpperCase;
+  }
+else {
+  alert("chose y n");
+ funUpperCase();
 }
-//execute function length
-length();
+
+
+
+
+return useUpperCase;
+}
+
+funUpperCase();
+
+
+
+function functionLowerCase() {
+  useLowerCase = prompt("use lower");
+
+  if (useLowerCase === null || useLowerCase === ""){
+    alert("please chose y n");
+    functionLowerCase();
+  }
+
+  else if (useLowerCase === "yes" || useLowerCase === "y") {
+    useLowerCase = true;
+    return useLowerCase;
+  }
+
+
+  else if (useLowerCase === "no" || useLowerCase === "n" || useLowerCase === "N") {
+    useLowerCase = false;
+    return useLowerCase;
+  }
+else {
+  alert("chose y n");
+  functionLowerCase();
+}
+
+
+
+
+return useLowerCase;
+}
+
+functionLowerCase();
+
+
+
+
+function functionNumbers() {
+  useNumbers = prompt("use numberr");
+
+  if (useNumbers === null || useNumbers === ""){
+    alert("please chose y n");
+    functionNumbers();
+  }
+
+  else if (useNumbers === "yes" || useNumbers === "y") {
+    useNumbers = true;
+    return useNumbers;
+  }
+
+
+  else if (useNumbers === "no" || useNumbers === "n" || useNumbers === "N") {
+    useNumbers = false;
+    return useNumbers;
+  }
+else {
+  alert("chose y n");
+  functionNumbers();
+}
+
+
+
+
+return useNumbers;
+}
+
+functionNumbers();
+
+
+
+
+
+function functionSpecialCharacters() {
+  specialChar = prompt("use special char");
+
+  if (specialChar === null || specialChar === ""){
+    alert("please chose y n");
+    functionSpecialCharacters();
+  }
+
+  else if (specialChar === "yes" || specialChar === "y") {
+    specialChar = true;
+    return specialChar;
+  }
+
+
+  else if (specialChar === "no" || specialChar === "n" || specialChar === "N") {
+    specialChar = false;
+    return specialChar;
+  }
+else {
+  alert("chose y n");
+  functionSpecialCharacters();
+}
+
+
+
+
+return specialChar;
+}
+
+functionSpecialCharacters();
+
 
 
 // Get references to the #generate element
