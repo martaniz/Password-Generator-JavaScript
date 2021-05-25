@@ -4,7 +4,7 @@
 var useLowerCase = "abcdefghijklmnopqrstuvwxyz";
 var useUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var useNumbers = "0123456789";
-var specialChar = "!@#$%^&*()_-+={}[];:'`~<,>.?/|"
+var useNumbers = "!@#$%^&*()_-+={}[];:'`~<,>.?/|"
 
 
 var passwordLength;
@@ -13,7 +13,6 @@ var number;
 var specialCharacter;
 
 
-var generateBtn = document.querySelector("#generate");
 
 
 
@@ -178,9 +177,87 @@ return specialChar;
 functionSpecialCharacters();
 
 
+//so i got my functions and input, how do i take the input and move on
+
+
+ //Function used to take all the input from the previous functions and generate a password using a random number generator and 
+ //the charAt method 
+ function generatePassword(){
+
+  length();
+  console.log(passwordLength );
+
+  funUpperCase();
+  console.log(useUpperCase );
+
+  functionLowerCase();
+  console.log(useLowerCase );
+  
+  functionNumbers();
+  console.log(useNumbers );
+  functionSpecialCharacters();
+  console.log(specialChar );
+
+var characters = lowercaseChar;
+var password = "";
+if (uppercaseCheck && numberCheck && specialCheck){
+  characters += uppercaseChar + numberChar + specialChar;
+
+}else if (uppercaseCheck && numberCheck){
+  characters += uppercaseChar + numberChar;
+
+}else if (numberCheck && specialCheck){
+  characters += numberChar + specialChar;
+
+}else if (uppercaseCheck && specialCheck){
+  characters += uppercaseChar + specialChar;
+
+}else if (uppercaseCheck){
+  characters += uppercaseChar;
+
+}else if(numberCheck){
+  characters += numberChar;
+
+}else if (specialCheck){
+  characters += specialChar;
+
+}else{
+  characters === lowercaseChar;
+}
+
+  for(var i = 0; i < passwordLength; i++){
+    password += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return password;
+}
+
+// Write password to the #password input
+function writePassword() {
+  var password1 = "";
+  password1 = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password1;
+}
+
+// function resetText(){
+//   document.getElementById("password").value = "Your Secure Password";
+// }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+
+
 
 // Get references to the #generate element
-
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
