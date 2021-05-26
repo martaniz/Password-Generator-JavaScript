@@ -17,18 +17,19 @@ var generateBtn = document.querySelector("#generate");
 
 
 //my first FUNCTION. lets write a function to determin the length of the password. this took me way to long to write.
-//if your reading this please note that JavaScript take the fUN out of FUNctions.
+//call function length
+//if your reading this please not that JavaScript take the fUN out of FUNctions.
 function length() {
 passwordLength = prompt("Select password lentght. Password must be a minimum of 8 and a maximum of 128 characters. :)");
 
 //my logic on generating 8 or more caracter password. it actualy works and im suprised. lol
-  if (passwordLength < 00000008){
+  if (passwordLength < 8){
     alert("Password cant be less then 8 characters long. Please select a number of characters in your password that is greater then 8 and lesser then 128");
     length();
   } 
 
  //i must be missing somthing but the only logical way i could write this out was to actualy write out the numbers of characters (128) in this way. im sure there is a correct way somwher out there but i could not find it
-  else if (passwordLength >     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999) {
+  else if (passwordLength > 128) {
     alert("Password to long. Please seelct a number of password characters that is less then 128 characters");
     length();
   } 
