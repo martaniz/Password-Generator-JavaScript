@@ -3,8 +3,8 @@
 
 var useLowerCase = "abcdefghijklmnopqrstuvwxyz";
 var useUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var useNumbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var useSpecialChara = "!@#$%^&*()_-+={}[];:'`~<,>.?/|"
+var useNumbers =  "0123456789";
+var useSpecialChara = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 
 
 var passwordLength;
@@ -46,26 +46,26 @@ length();
 
 //lets duplicate the above function and make it work for uppercase etc.
 function funUpperCase() {
-  useUpperCase = prompt("Would you like to use upper case characters in your password? Type: Yes or No");
+  uperCase = prompt("Would you like to use upper case characters in your password? Type: Yes or No");
 
-  if (useUpperCase === null || useUpperCase === ""){
+  if (uperCase === null || uperCase === ""){
     alert("Please type: Yes or No ");
     funUpperCase();
   }
   //yes i could of writen out all the o
-  else if (useUpperCase === "yes" || useUpperCase === "y" || useUpperCase === "Yes" || useUpperCase === "YES" || useUpperCase === "Y" ) {
-    useUppeCase = true;
-    return useUpperCase;
+  else if (uperCase === "yes" || uperCase === "y" || uperCase === "Yes" || uperCase === "YES" || uperCase === "Y" ) {
+    uperCase = true;
+    return uperCase;
   }
-  else if (useUpperCase === "no" || useUpperCase === "n" || useUpperCase === "N" || useUpperCase === "NO" || useUpperCase === "No") {
-    useUpperCase = false;
-    return useUpperCase;
+  else if (uperCase === "no" || uperCase === "n" || uperCase === "N" || uperCase === "NO" || uperCase === "No") {
+    uperCase = false;
+    return uperCase;
   }
   else {
     alert("Please type: Yes or No ");
     funUpperCase();
   }   
-  return useUpperCase;
+  return uperCase;
 }
 funUpperCase();
 
@@ -78,7 +78,7 @@ function functionLowerCase() {
     alert("Please type in yes or no ");
     functionLowerCase();
   }
-  else if ( useUpperCase === "yes" || useLowerCase === "y" || useUpperCase === "Yes" || useUpperCase === "YES" || useUpperCase === "Y") {
+  else if ( useLowerCase === "yes" || useLowerCase === "y" || useLowerCase === "Yes" || useLowerCase === "YES" || useLowerCase === "Y") {
     useLowerCase = true;
     return useLowerCase;
   }
@@ -97,25 +97,25 @@ functionLowerCase();
 
 //FUNCTION for NUMBERS
 function functionNumbers() {
-  useNumbers = prompt("Would you like your password to contain numbers?");
+  number = prompt("Would you like your password to contain numbers?");
 
-  if (useNumbers === null || useNumbers === ""){
+  if (number === null || number === ""){
     alert("Please type: Yes or No ");
     functionNumbers();
   }
-  else if (useNumbers === "yes" || useNumbers === "y" || useNumbers === "YES" || useNumbers === "Yes" || useNumbers === "Y") {
-    useNumbers = true;
-    return useNumbers;
+  else if (number === "yes" || number === "y" || number === "YES" || number === "Yes" || number === "Y") {
+    number = true;
+    return number;
   }
-  else if (useNumbers === "no" || useNumbers === "n" || useNumbers === "N" || useNumbers === "NO" || useNumbers === "No") {
-    useNumbers = false;
-    return useNumbers;
+  else if (number === "no" || number === "n" || number === "N" || number === "NO" || number === "No") {
+    number = false;
+    return number;
   }
   else {
   alert("Please type: Yes or No ");
   functionNumbers();
   }
-  return useNumbers;
+  return number;
 }
 functionNumbers();
 //End Function for Numbers
@@ -123,47 +123,49 @@ functionNumbers();
 
 //FUNCTION for Special Characters
 function functionSpecialCharacters() {
-  specialChar = prompt("Would you like your password to use special characters? Type: Yes or No ");
-  if (specialChar === null || specialChar === ""){
+  specialCharacter = prompt("Would you like your password to use special characters? Type: Yes or No ");
+  if (specialCharacter === null || specialCharacter === ""){
     alert("Please type: Yes or No ");
     functionSpecialCharacters();
   }
-  else if (specialChar === "yes" || specialChar === "y" || specialChar === "Y" || specialChar === "Yes" || specialChar === "YES") {
-    specialChar = true;
-    return specialChar;
+  else if (specialCharacter === "yes" || specialCharacter === "y" || specialCharacter === "Y" || specialCharacter === "Yes" || specialCharacter === "YES") {
+    specialCharacter = true;
+    return specialCharacter;
   }
-  else if (specialChar === "no" || specialChar === "n" || specialChar === "N" || specialChar === "NO" || specialChar === "No") {
-    specialChar = false;
-    return specialChar;
+  else if (specialCharacter === "no" || specialCharacter === "n" || specialCharacter === "N" || specialCharacter === "NO" || specialCharacter === "No") {
+    specialCharacter = false;
+    return specialCharacter;
   }
 else {
   alert("Please type: Yes or No");
   functionSpecialCharacters();
   }
-  return specialChar;
+  return specialCharacter;
 }
-functionSpecialCharacters();
+
 //END Function for Special Character
 
 
 //so i got my functions and input, how do i take the input and move on
 
 
- //Function used to take all the input from the previous functions and generate a password using a random number generator and 
- //the charAt method 
- function generatePassword(){
+ //FUNCTION to generate password used help form code i found on line at https://github.com/jamierachael/Password-Generator/blob/master/script.js
 
+ function generatePassword(){
+//this one works 
   length();
   console.log(passwordLength );
 
   funUpperCase();
-  console.log(useUpperCase );
+  console.log(uperCase );
 
+  //thos one works 
   functionLowerCase();
   console.log(useLowerCase );
-  
+  //this one wroks
   functionNumbers();
-  console.log(useSpecialChara );
+  console.log(number );
+
   functionSpecialCharacters();
   console.log(specialCharacter );
 
@@ -172,31 +174,32 @@ var password = "";
 
 
 //now we need to write out the if statments . so if upper and number and lower and sceptial char ...then 
-if (useUpperCase && useNumbers && specialCharacter){
-  characters += useUpperCase + useNumbers + specialCharacter;
+if (uperCase && number && specialCharacter){
+  characters += useUpperCase + useNumbers ;
 
-}else if (useUpperCase && useNumbers){
+}else if (uperCase && number){
   characters += useUpperCase + useNumbers;
 
-}else if (useNumbers && specialCharacter){
-  characters += useNumbers + specialCharacter;
+}else if (number && specialCharacter){
+  characters += useNumbers + usespecialChara;
 
-}else if (useUpperCase && specialCharacter){
-  characters += useUpperCase + specialCharacter;
+}else if (uperCase && specialCharacter){
+  characters += useUpperCase + usespecialChara;
 
-}else if (useUpperCaseuseUpperCase){
+}else if (uperCase){
   characters += useUpperCase;
 
-}else if(useNumbers){
+}else if(number){
   characters += useNumbers;
 
 }else if (specialCharacter){
-  characters += specialCharacter;
+  characters += usespecialChara;
 
 }else{
   characters === useLowerCase;
 }
 
+//wrote this with the help of a classmate and TA. i could not make i+1 work, but found i++ did the trick
   for(var i = 0; i < passwordLength; i++){
     password += characters.charAt(Math.floor(Math.random() * characters.length));
   }
